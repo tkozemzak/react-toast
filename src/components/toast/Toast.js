@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./Toast.css";
 
 const Toast = ({ toastList, position }) => {
@@ -32,6 +33,15 @@ const Toast = ({ toastList, position }) => {
       </div>
     </>
   );
+};
+
+Toast.defaultProps = {
+  position: "bottom-right",
+};
+
+Toast.propTypes = {
+  toastList: PropTypes.array.isRequired,
+  position: PropTypes.string,
 };
 
 export default Toast;
