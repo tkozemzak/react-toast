@@ -9,6 +9,12 @@ const Toast = ({ toastList, position }) => {
     setList(toastList);
   }, [toastList, list]);
 
+  const deleteToast = (id) => {
+    const index = list.findIndex((e) => e.id === id);
+    list.splice(index, 1);
+    setList([...list]);
+  };
+
   return (
     <>
       <div className={`notification-container ${position}`}>
@@ -19,7 +25,7 @@ const Toast = ({ toastList, position }) => {
               className={`notification toast ${position}`}
               style={{ backgroundColor: toast.backgroundColor }}
             >
-              <button>x</button>
+              <button onClick={() => deleteToast(toast.id)}>x</button>
               <div className="notification-image">
                 <img src={toast.icon} alt="" />
               </div>

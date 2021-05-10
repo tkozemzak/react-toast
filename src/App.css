@@ -35,12 +35,14 @@
   margin: 0 10px;
   border: none;
   outline: none;
+  border-radius: 5px;
 }
 
 .select {
   display: flex;
   width: 30%;
   margin-top: 10px;
+  background-color: #282c34;
 }
 
 .position-select {
